@@ -14,6 +14,8 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation(kotlin("reflect"))
+    implementation("com.varabyte.kotter:kotter:1.0.0")
     implementation("com.willowtreeapps:fuzzywuzzy-kotlin:0.9.0")
 }
 
