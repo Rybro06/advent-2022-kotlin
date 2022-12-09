@@ -43,7 +43,8 @@ class Cli {
         }
     }
 
-    private val challenges: List<Challenge<*, *>> = Challenge::class.sealedSubclasses.map { it.createInstance() }
+    private val challenges: List<Challenge<*, *>> =
+        Challenge::class.sealedSubclasses.map { it.createInstance() }.sortedBy { "${it.day()}.${it.part()}" }
 
     private fun localInputPathDir(): Path = Path.of(System.getProperty("java.io.tmpdir"), "advent")
 
